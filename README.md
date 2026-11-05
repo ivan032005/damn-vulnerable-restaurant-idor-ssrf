@@ -54,10 +54,10 @@ La documentación interactiva (Swagger) queda disponible en `http://localhost:80
 
 ## 3. Resumen de las vulnerabilidades
 
-| # | Vulnerabilidad | Endpoint | Archivo | Categoría OWASP |
-|---|---|---|---|---|
-| 1 | IDOR / Broken Object Level Authorization | `PUT /profile` | `app/apis/auth/services/update_profile_service.py` | API1:2023 (≈ A01:2021) |
-| 2 | SSRF, encadenada con escalación de privilegios | `PUT /menu/{id}` + `PUT /users/update_role` | `app/apis/menu/utils.py` | API7:2023 (≈ A10:2021) |
+| #   | Vulnerabilidad                                 | Endpoint                                    | Archivo                                            | Categoría OWASP        |
+| --- | ---------------------------------------------- | ------------------------------------------- | -------------------------------------------------- | ---------------------- |
+| 1   | IDOR / Broken Object Level Authorization       | `PUT /profile`                              | `app/apis/auth/services/update_profile_service.py` | API1:2023 (≈ A01:2021) |
+| 2   | SSRF, encadenada con escalación de privilegios | `PUT /menu/{id}` + `PUT /users/update_role` | `app/apis/menu/utils.py`                           | API7:2023 (≈ A10:2021) |
 
 Detalle completo (causa raíz, impacto, riesgo, mitigación aplicada, validación antes/después y reflexión ética) en `informe_ejecutivo.pdf`.
 
@@ -83,4 +83,26 @@ Detalle completo (causa raíz, impacto, riesgo, mitigación aplicada, validació
 
 Todas las pruebas se ejecutaron **exclusivamente contra una instancia local** (`localhost:8091`) de la aplicación, con datos de prueba (`atacante`, `victima`) creados para el ejercicio. No se intervino ningún sistema de terceros ni se expuso el entorno a internet. Detalle de la justificación ética en la sección 7 de `informe_ejecutivo.pdf`.
 
+## 6. Entregables del proyecto
 
+- [x] Repositorio técnico con el código intervenido (este repo)
+- [x] Informe ejecutivo (máx. 6 páginas sin portada/referencias, con evidencia) — `informe_ejecutivo.pdf`
+- [x] Publicación técnica — [artículo en Medium](https://medium.com/@ivanorozco043/9d6dc309e256?source=friends_link&sk=08202d85bc3b343796a880fa41498e71)
+- [x] Avance de medio semestre
+- [ ] Sustentación individual (20 min)
+
+## 7. Registro de participación de los integrantes
+
+Proyecto individual: un único integrante, responsable de la totalidad de las actividades.
+
+| Integrante           | Rol / responsabilidades                                                                                                                                                                                                                                                                                                                                                       |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ivan Orozco Fontalvo | Selección y despliegue de la aplicación objetivo; identificación, explotación controlada y mitigación de ambas vulnerabilidades (IDOR y SSRF); diagrama de arquitectura; análisis de riesgo y relación con OWASP; validación antes/después; reflexión ética; redacción del informe ejecutivo, el README técnico y el artículo de publicación; preparación de la sustentación. |
+
+## 8. Referencias
+
+- OWASP. *API Security Top 10 2023*. [owasp.org/API-Security/editions/2023](https://owasp.org/API-Security/editions/2023/en/0x11-t10/)
+- OWASP. *OWASP Top 10 2021*. [owasp.org/Top10](https://owasp.org/Top10/)
+- theowni. *Damn Vulnerable RESTaurant API Game* (aplicación objetivo, repositorio original). [github.com/theowni/Damn-Vulnerable-RESTaurant-API-Game](https://github.com/theowni/Damn-Vulnerable-RESTaurant-API-Game)
+- MITRE. *CWE-639: Authorization Bypass Through User-Controlled Key*. [cwe.mitre.org/data/definitions/639.html](https://cwe.mitre.org/data/definitions/639.html)
+- MITRE. *CWE-918: Server-Side Request Forgery (SSRF)*. [cwe.mitre.org/data/definitions/918.html](https://cwe.mitre.org/data/definitions/918.html)
