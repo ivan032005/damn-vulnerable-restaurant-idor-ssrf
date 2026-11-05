@@ -83,10 +83,4 @@ Detalle completo (causa raíz, impacto, riesgo, mitigación aplicada, validació
 
 Todas las pruebas se ejecutaron **exclusivamente contra una instancia local** (`localhost:8091`) de la aplicación, con datos de prueba (`atacante`, `victima`) creados para el ejercicio. No se intervino ningún sistema de terceros ni se expuso el entorno a internet. Detalle de la justificación ética en la sección 7 de `informe_ejecutivo.pdf`.
 
-## 6. Entregables del proyecto
 
-- [x] Repositorio técnico con el código intervenido (este repo)
-- [x] Informe ejecutivo (7 páginas, con evidencia) — `informe_ejecutivo.pdf`
-- [ ] Publicación técnica (blog/Medium)
-- [ ] Avance de medio semestre
-- [ ] Sustentación individual (20 min)
